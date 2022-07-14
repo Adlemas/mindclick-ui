@@ -1,7 +1,38 @@
 <?php @include('template-parts/header.php') ?>
 
 <main>
-  <div class="intro block">
+  <div class="loading-modal" id="loading-modal">
+    <div class="loading-modal__content">
+      <div class="loading-modal__content__text">
+        <p>Загрузка...</p>
+      </div>
+      <div class="loading-modal__content__spinner">
+        <div class="spinner-border" role="status"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-modal__wrapper" id="app-modal">
+    <div class="app-modal__modal">
+      <h1 id="app-modal-status-text">Заявка отправлена</h1>
+
+      <img
+        id="app-modal-status-image"
+        src="assets/images/jpg/mail-sent.jpg"
+        alt="sent"
+        width="300"
+      />
+
+      <button
+        id="app-modal-btn"
+        class="btn btn-primary btn-lg btn-block app-modal__btn"
+      >
+        Закрыть
+      </button>
+    </div>
+  </div>
+
+  <section class="intro block">
     <div class="container">
       <div class="intro-row">
         <div class="left">
@@ -14,8 +45,8 @@
             сайте.
           </div>
           <div class="buttons">
-            <div class="btn btn-primary btn-lg">Подать заявку</div>
-            <div class="btn btn-outline btn-lg">Подробнее</div>
+            <a class="btn btn-primary btn-lg" href="#app">Подать заявку</a>
+            <a class="btn btn-outline btn-lg" href="#about">Подробнее</a>
           </div>
         </div>
         <div class="right">
@@ -24,9 +55,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="block how-it-works">
+  <section id="why-us" class="block how-it-works">
     <div class="container">
       <div class="heading short-border">
         <strong>Почему вам нужно выбрать нас?</strong>
@@ -103,9 +134,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="block why-important">
+  <section id="why-important" class="block why-important">
     <div class="container">
       <div class="heading short-border">
         <strong>Почему это важно?</strong>
@@ -154,9 +185,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="block plans">
+  <section id="plans" class="block plans">
     <div class="container">
       <div class="heading short-border">
         <strong>Цены подойдут для каждого!</strong>
@@ -239,9 +270,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="block send-first">
+  <section class="block send-first">
     <div class="container">
       <h1>Сделайте первый шаг</h1>
       <span
@@ -257,28 +288,76 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="send-form">
+  <section id="about" class="block about">
+    <div class="container">
+      <div class="heading short-border short-border__left-align">
+        <strong>О нас</strong>
+      </div>
+
+      <p class="description">
+        Мы платформа, которая предоставит вам возможность обучаться IT
+        технологиям, ментальной арифметике и чтению. Просто представьте, вы
+        обучайтесь программированию онлайн и используйте для написания кода одну
+        программу, в то время общаетесь с учителем в другой программе для видео
+        конференций, для выполнения домашний заданий вы уже используйте другую
+        программу для отслеживания выполнения задач и для связи с преподавателем
+        или руководителем использовуйте какую-либо социальную сеть. И при всём
+        при этом ваш ноутбук для обучения не так силён чтобы одновременно
+        использовать 4-7 программ.
+      </p>
+
+      <p class="list-title">
+        Чтобы эфективно и быстро обучаться и при этом получать удовольствие от
+        процесса вам нужно пять вещей
+      </p>
+
+      <ul class="points">
+        <li>
+          Всё в одном месте - конференции, задания, практика с теорией и связь.
+        </li>
+        <li>Простой но при этом функциональный интерфейс</li>
+        <li>Возможность обучаться со всех видов устройств</li>
+        <li>Стабильность и отслеживание статистики и успехов</li>
+        <li>Умная и удобная система оплаты</li>
+      </ul>
+
+      <p class="description">
+        MindClick - платформа созданная для учеников и руководителей, чтобы
+        помочь не тратить время в поисках информации и инструментов для
+        обучения. Благодаря автоматизации многих задач вы скоро повысите свою
+        эфективность обучения и будете проводить высококлассные и
+        суперэффективные совещания.
+      </p>
+    </div>
+  </section>
+
+  <section id="app" class="send-form">
     <div class="left">
-        <h1>
-            Мы все знаем, что время это деньги... тогда хватить зря тратить время и учитесь онлайн
-        </h1>
+      <h1 class="app-heading">
+        Мы все знаем, что время это деньги... тогда хватить зря тратить время и
+        учитесь онлайн
+      </h1>
     </div>
 
     <div class="right">
-        <form action="" class="grid-inputs">
-            <input type="text" placeholder="Имя">
-            <input type="text" placeholder="Фамилия">
-            <input type="text" placeholder="Почта">
-            <input type="text" placeholder="Телефон">
-            
-            <textarea placeholder="Напишите своё сообщение"></textarea>
+      <form action="" id="app-form" class="grid-inputs">
+        <input required type="text" name="name" placeholder="Имя" />
+        <input required type="text" name="lastName" placeholder="Фамилия" />
+        <input required type="text" name="email" placeholder="Почта" />
+        <input required type="text" name="phone" placeholder="Телефон" />
 
-            <div class="btn btn-primary">Отправить</div>
-        </form>
+        <textarea
+          required
+          name="message"
+          placeholder="Напишите своё сообщение"
+        ></textarea>
+
+        <button type="submit" class="btn btn-primary">Отправить</button>
+      </form>
     </div>
-  </div>
+  </section>
 
   <?php @include('template-parts/footer.php') ?>
 </main>

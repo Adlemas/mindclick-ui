@@ -28,23 +28,23 @@
             <ul class="links-block">
               <strong>Главная</strong>
               
-              <a href="#"><li>Что это?</li></a>
-              <a href="#"><li>Почему именно мы?</li></a>
-              <a href="#"><li>Почему это важно?</li></a>
-              <a href="#"><li>Цены</li></a>
+              <a href="/index.php#about"><li>Что это?</li></a>
+              <a href="/index.php#why-us"><li>Почему именно мы?</li></a>
+              <a href="/index.php#why-important"><li>Почему это важно?</li></a>
+              <a href="/index.php#plans"><li>Цены</li></a>
             </ul>
-            <ul class="links-block">
+            <!-- <ul class="links-block">
               <strong>Компания</strong>
               
               <a href="#"><li>О нас</li></a>
               <a href="#"><li>Блог</li></a>
-            </ul>
+            </ul> -->
             <ul class="links-block">
               <strong>Конфиденциальность</strong>
               
-              <a href="#"><li>Условия пользования</li></a>
-              <a href="#"><li>Политика конфиденциальности</li></a>
-              <a href="#"><li>Связь</li></a>
+              <a href="/terms.php"><li>Условия пользования</li></a>
+              <a href="/privacy.php"><li>Политика конфиденциальности</li></a>
+              <!-- <a href="#"><li>Связь</li></a> -->
             </ul>
           </div>
         </div>
