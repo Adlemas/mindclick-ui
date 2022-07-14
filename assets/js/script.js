@@ -1,5 +1,6 @@
 "use strict";
 
+var baseURL = "https://app.mindclickon.com/";
 $(".works-slider").slick({
   dots: true,
   infinite: true,
@@ -83,7 +84,7 @@ function sendRequest(e) {
 
   $("#loading-modal").css("display", "flex");
   $("#app-modal").css("display", "none");
-  fetch("http://localhost:8080/application", {
+  fetch("".concat(baseURL, "application"), {
     method: "POST",
     // send form data as json
     body: JSON.stringify(Object.fromEntries(formData)),
@@ -95,7 +96,6 @@ function sendRequest(e) {
   }).then(function (data) {
     // hide #loading-modal
     $("#loading-modal").css("display", "none");
-    console.log(data);
 
     if (data.message) {
       $("#app-modal-status-text").text(data.message);
@@ -105,7 +105,6 @@ function sendRequest(e) {
   })["catch"](function (error) {
     // hide #loading-modal
     $("#loading-modal").css("display", "none");
-    console.error(error);
     $("#app-modal-status-text").text("Что-то пошло не так...");
     $("#app-modal-status-image").attr("src", "assets/images/jpg/failure.jpg");
     openModal();
